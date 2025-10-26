@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Application Status</title>
+    <link rel="stylesheet" href="track_status.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Track Application Status</h1>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterStatus('All')">All</button>
+            <button class="filter-btn" onclick="filterStatus('Applied')">Applied</button>
+            <button class="filter-btn" onclick="filterStatus('In Review')">In Review</button>
+            <button class="filter-btn" onclick="filterStatus('Interview Scheduled')">Interview</button>
+            <button class="filter-btn" onclick="filterStatus('Selected')">Selected</button>
+            <button class="filter-btn" onclick="filterStatus('Rejected')">Rejected</button>
+        </div>
+
+        <!-- Application List -->
+        <div id="applications"></div>
+    </div>
+
+    <script src="track_status.js"></script>
+</body>
+</html>

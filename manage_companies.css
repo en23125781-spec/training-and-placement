@@ -1,0 +1,149 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #5a189a, #9d4edd);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form Styling */
+.form-container {
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 20px;
+    background: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 12px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #9d4edd;
+    outline: none;
+    box-shadow: 0 0 8px rgba(157, 78, 237, 0.5);
+}
+
+/* Button Styling */
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #5a189a, #9d4edd);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #9d4edd, #c77dff);
+    box-shadow: 0 5px 15px rgba(157, 78, 237, 0.4);
+}
+
+/* Table Styling */
+.table-container {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f4f4f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 15px;
+}
+
+th {
+    background: linear-gradient(45deg, #5a189a, #9d4edd);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f8f8ff;
+}
+
+tr:hover {
+    background: #f1eaff;
+}
+
+/* Action Buttons */
+td button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.edit-btn {
+    background: #28a745;
+    color: white;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+td button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

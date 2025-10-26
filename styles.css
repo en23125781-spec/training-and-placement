@@ -1,0 +1,87 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #0044cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Heading inside main content */
+h2 {
+    font-size: 2rem;
+    color: #0044cc;
+    margin-bottom: 15px;
+}
+
+/* Announcement list styles */
+#announcementList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#announcementList li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#announcementList li strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+#announcementList li p {
+    font-size: 1rem;
+    color: #555;
+}
+
+#announcementList li small {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main h2 {
+        font-size: 1.5rem;
+    }
+
+    #announcementList li {
+        padding: 10px;
+    }
+}

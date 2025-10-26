@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Applications & Tracking</title>
+    <link rel="stylesheet" href="applications_tracking.css">
+    <script src="applications_tracking.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Student Applications & Tracking</h1>
+    </header>
+    
+    <main>
+        <button onclick="openForm()">Add New Application</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                    <th>Date Applied</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="applicationTable">
+                <!-- Data from Database will be populated here -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Application Form -->
+    <div id="applicationForm" class="modal">
+        <form id="addApplicationForm">
+            <h2>Add Application</h2>
+            <label>Company:</label>
+            <input type="text" id="company" required>
+            <label>Position:</label>
+            <input type="text" id="position" required>
+            <label>Status:</label>
+            <select id="status">
+                <option value="Applied">Applied</option>
+                <option value="In Review">In Review</option>
+                <option value="Interview Scheduled">Interview Scheduled</option>
+                <option value="Selected">Selected</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+            <label>Date Applied:</label>
+            <input type="date" id="dateApplied" required>
+            <button type="submit">Save</button>
+            <button type="button" onclick="closeForm()">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

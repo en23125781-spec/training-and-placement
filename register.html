@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Student Registration</h2>
+    <form id="registerForm">
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="studentID" placeholder="Student ID" required>
+      <select id="program" required>
+        <option value="">Select Branch</option>
+        <option value="CSE (AIML)">CSE (AIML)</option>
+        <option value="Computer">Computer</option>
+        <option value="Electronics & Telecommunication">Electronics & Telecommunication</option>
+        <option value="Chemical">Chemical</option>
+        <option value="Mechanical">Mechanical</option>
+        <option value="Civil">Civil</option>
+      </select>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already registered? <a href="login.html">Login here</a></p>
+  </div>
+  <script src="register.js"></script>
+</body>
+</html>

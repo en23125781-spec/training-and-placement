@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Drive Schedule</title>
+    <link rel="stylesheet" href="drive_schedule.css">
+</head>
+<body>
+    <header>
+        <h1>Placement Drive Schedule</h1>
+    </header>
+
+    <main>
+        <button onclick="document.getElementById('formWrapper').style.display='block'">Add New Placement Drive</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="scheduleTable">
+                <!-- Data from Database will be populated here -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Form Wrapper with visibility -->
+    <div id="formWrapper" style="display:none; padding: 20px; background: #f0f0f0;">
+        <form id="addDriveForm">
+            <h2>Add Placement Drive</h2>
+
+            <label>Company:</label>
+            <input type="text" id="company" name="company" required>
+
+            <label>Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label>Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label>Status:</label>
+            <select id="status" name="status" required>
+                <option value="Upcoming">Upcoming</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <br><br>
+            <button type="submit">Save</button>
+            <button type="button" onclick="document.getElementById('formWrapper').style.display='none'">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        // Load drives on page load
+        document.addEventListener("DOMContentLoaded", loadDrives);
+
+        function loadDrives() {
+            fetch("fetch_drives.php")
+                .then(response => response.json())
+                .then(data => {
+                    let table = document.getElementById("scheduleTable");
+                    table.innerHTML = "";
+
+                    data.forEach(drive => {
+                        const formattedDate = new Date(drive.event_date).toLocaleDateString("en-US", {
+                            year: "numeric", month: "long", day: "numeric"
+                        });
+
+                        table.innerHTML += `
+                            <tr>
+                                <td>${drive.company}</td>
+                                <td>${formattedDate}</td>
+                                <td>${drive.location}</td>
+                                <td>${drive.status}</td>
+                                <td><button onclick="deleteDrive(${drive.id})">Delete</button></td>
+                            </tr>
+                        `;
+                    });
+                });
+        }
+
+        // Submit form with AJAX
+        document.getElementById("addDriveForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch("add_drive.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.text())
+            .then(msg => {
+                alert(msg);
+                loadDrives();
+                document.getElementById('formWrapper').style.display = 'none';
+                this.reset();
+            })
+            .catch(err => {
+                console.error("Error:", err);
+            });
+        });
+
+        // Delete function
+        function deleteDrive(id) {
+            if (confirm("Are you sure you want to delete this drive?")) {
+                fetch(`delete_drive.php?id=${id}`)
+                    .then(res => res.text())
+                    .then(msg => {
+                        alert(msg);
+                        loadDrives();
+                    });
+            }
+        }
+    </script>
+</body>
+</html>

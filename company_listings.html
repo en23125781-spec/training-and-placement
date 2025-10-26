@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Listings</title>
+    <link rel="stylesheet" href="company_listings.css">
+    <script defer src="company_listings.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Available Job Postings</h1>
+
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterJobs('all')">All</button>
+            <button class="filter-btn" onclick="filterJobs('upcoming')">Upcoming</button>
+            <button class="filter-btn" onclick="filterJobs('expired')">Expired</button>
+        </div>
+
+        <!-- Job Listings Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Job Position</th>
+                    <th>Deadline</th>
+                    <th>Apply</th>
+                </tr>
+            </thead>
+            <tbody id="companyList"></tbody>
+        </table>
+    </div>
+
+</body>
+</html>

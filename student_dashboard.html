@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="./student_dashboard.css">
+  <script defer src="./student_dashboard.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Student Dashboard</h2>
+    <ul>
+      <li onclick="loadSection('profile')">Profile</li>
+      <li onclick="loadSection('Application')">Application Form</li>
+      <li onclick="loadSection('apply_job')">Apply for Job</li>
+      <li onclick="loadSection('upload_resume')">Edit & Upload Resume</li>
+      <li onclick="loadSection('view_schedule')">View Placement Schedule</li>
+      <li onclick="loadSection('download_offer')">Download Offer Letters</li>
+      <li onclick="loadSection('track_status')">Track Application Status</li>
+      <li onclick="loadSection('announcements')">Notifications & Announcements</li>
+      <li onclick="loadSection('settings')">Settings & Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1 id="section-title">Dashboard Overview</h1>
+    <div id="section-content">
+      <p>Select an option from the sidebar to view details.</p>
+    </div>
+  </div>
+
+</body>
+</html>

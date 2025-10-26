@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume & Document Verification</title>
+    <link rel="stylesheet" href="../css/resume_verification.css">
+</head>
+<body>
+    <header>
+        <h1>Resume & Document Verification</h1>
+    </header>
+
+    <main>
+        <button onclick="openForm()">Upload Documents</button>
+
+        <div id="documentTable" style="background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin-top: 20px;">
+            <!-- Documents will be loaded here dynamically -->
+        </div>
+    </main>
+
+    <!-- Upload Document Form -->
+    <div id="uploadForm" class="modal">
+        <form id="uploadDocumentForm" enctype="multipart/form-data">
+            <h2>Upload Documents</h2>
+            <label>Document Type:</label>
+            <select id="docType">
+                <option value="Resume">Resume</option>
+                <option value="Certificate">Certificate</option>
+                <option value="ID Proof">ID Proof</option>
+            </select>
+            <label>Upload File:</label>
+            <input type="file" id="fileUpload" required>
+            <button type="submit">Upload</button>
+            <button type="button" onclick="closeForm()">Cancel</button>
+        </form>
+    </div>
+
+    <script src="resume_verification.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Application Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .form-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    h2 {
+      margin-top: 20px;
+      color: #555;
+    }
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .form-group {
+      flex: 1;
+      margin-right: 10px;
+      min-width: 250px;
+    }
+    .form-group:last-child {
+      margin-right: 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="file"] {
+      padding: 3px;
+    }
+    .error-message {
+      display: none;
+      color: red;
+      font-size: 0.85em;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #5cb85c;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #4cae4c;
+    }
+    img {
+      max-width: 150px;
+      margin-top: 10px;
+    }
+    .item-list div {
+      background-color: #e7f3e7;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      padding: 6px 10px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Application Form</h1>
+    <form id="applicationForm" enctype="multipart/form-data">
+      <!-- Personal Details -->
+      <h2>Personal Details</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="full_name" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Mobile Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <input type="text" id="gender" name="gender" placeholder="Enter your gender" required />
+        </div>
+        <div class="form-group">
+          <label for="occupation">Application No</label>
+          <input type="text" id="occupation" name="occupation" placeholder="EN21XXXXXX/DSE21XXXXXX" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" placeholder="Enter your Address" required />
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="photo">Upload Personal Photo</label>
+        <input type="file" id="photo" name="photo" accept="image/*" onchange="previewPhoto()" required />
+        <img id="photo-preview" alt="Photo Preview" />
+      </div>
+    
+      <!-- Educational Details -->
+      <h2>Educational Details</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ssc-school">SSC School Name</label>
+          <input type="text" id="ssc-school" name="ssc_school" required />
+        </div>
+        <div class="form-group">
+          <label for="ssc">SSC Percentage</label>
+          <input type="number" id="ssc" name="ssc" min="0" max="100" required />
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group">
+          <label for="hsc-college">HSC College Name</label>
+          <input type="text" id="hsc-college" name="hsc_college" required />
+        </div>
+        <div class="form-group">
+          <label for="hsc">HSC Percentage</label>
+          <input type="number" id="hsc" name="hsc" min="0" max="100" required />
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group">
+          <label for="degree">Degree</label>
+          <input type="text" id="degree" name="degree" required />
+        </div>
+        <div class="form-group">
+          <label for="degree-percentage">Degree Percentage</label>
+          <input type="number" id="degree-percentage" name="degree_percentage" min="0" max="100" required />
+        </div>
+      </div>
+    
+      <div class="form-row">
+        <div class="form-group">
+          <label for="college">College Name</label>
+          <input type="text" id="college" name="college" value="Gharda Institute Of Technology, Lavel, Ratnagiri" required />
+        </div>
+        <div class="form-group">
+          <label for="cgpa">CGPA</label>
+          <input type="number" id="cgpa" name="cgpa" min="0" max="100" required />
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="year">Year of Passing</label>
+        <input type="text" id="year" name="year" required />
+      </div>
+    
+      <!-- Internship -->
+      <h2>Internship</h2>
+      <input type="file" id="internship_certificate" name="internship_certificate" accept=".pdf,.jpg,.png" />
+    
+      <!-- CV Upload -->
+      <h2>Upload CV</h2>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required />
+    
+      <!-- Submit -->
+      <div class="form-row">
+        <button type="submit" id="submitBtn">Submit Application</button>
+      </div>
+    </form>
+    
+    <script>
+      // Preview photo
+      function previewPhoto() {
+        const photo = document.getElementById("photo").files[0];
+        const preview = document.getElementById("photo-preview");
+        if (photo) {
+          const reader = new FileReader();
+          reader.onload = (e) => (preview.src = e.target.result);
+          reader.readAsDataURL(photo);
+        }
+      }
+    
+      // Handle form submission
+      document.getElementById("applicationForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+    
+        const form = document.getElementById("applicationForm");
+        const formData = new FormData(form);
+    
+        try {
+          const res = await fetch("/submit-application", {
+            method: "POST",
+            body: formData,
+          });
+    
+          const data = await res.json();
+          if (data.success) {
+            alert("✅ Application submitted successfully!");
+            form.reset();
+            document.getElementById("photo-preview").src = "";
+          } else {
+            alert("❌ " + data.message);
+          }
+        } catch (err) {
+          alert("Server error. Please try again later.");
+          console.error(err);
+        }
+      });
+    </script>
+    
+</body>
+</html>

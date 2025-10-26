@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics</title>
+    <link rel="stylesheet" href="reports_analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="reports_analytics.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Reports & Analytics</h1>
+    </header>
+
+    <main>
+        <div class="filters">
+            <label for="dateFrom">From:</label>
+            <input type="date" id="dateFrom">
+            <label for="dateTo">To:</label>
+            <input type="date" id="dateTo">
+            <button onclick="loadReports()">Generate Report</button>
+        </div>
+
+        <div class="stats">
+            <div class="card">Total Applications: <span id="totalApplications">0</span></div>
+            <div class="card">Verified Documents: <span id="verifiedDocs">0</span></div>
+            <div class="card">Pending Reviews: <span id="pendingReviews">0</span></div>
+            <div class="card">Placements: <span id="placements">0</span></div>
+        </div>
+
+        <canvas id="analyticsChart"></canvas>
+    </main>
+</body>
+</html>
